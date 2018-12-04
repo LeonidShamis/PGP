@@ -4,4 +4,4 @@ Using different toolkits, libraries and implementations of the [OpenPGP](https:/
 
 - [gpg](gpg) - Using GNU Privacy Guard (GnuPG)
 - [jpgpj](jpgpj) - Using JPGPJ Java GPG Library
-
+- [kbpgp](kbpgp) - Using kbpgp Keybase's implementation of PGP in JavaScript

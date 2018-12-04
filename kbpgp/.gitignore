@@ -1,0 +1,6 @@
+node_modules
+alice-secret-key.asc
+alice-public-key.asc
+bob-secret-key.asc
+bob-public-key.asc
+message-alice-to-bob.txt.asc

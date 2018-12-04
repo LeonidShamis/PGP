@@ -1,0 +1,10 @@
+{
+  "name": "using-kbpgp",
+  "description": "Using kbpgp Keybase's implementation of PGP in JavaScript",
+  "version": "0.1.0",
+  "author": "Leonid Shamis",
+  "license": "MIT",
+  "dependencies": {
+    "kbpgp": "^2.0.82"
+  }
+}

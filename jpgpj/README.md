@@ -12,32 +12,44 @@ Refer to [JPGPJ](https://github.com/justinludwig/jpgpj) for more details.
   - Sender - Alice (alice@example.com, passphrase for the secret key = "AlicePassword123")
   - Recipient - Bob (bob@example.com, passphrase for the secret key = "BobPassword123")
   - Keys:
+ 
+ ```
     ../keys/alice-secret-key.asc    - Alice private key
     ../keys/alice-public-key.asc    - Alice public key
     ../keys/bob-secret-key.asc      - Bob private key
     ../keys/bob-public-key.asc      - Bob public key
+```
 
 ### Steps:
 
   - build
-  - sign and encrypt message from Alice to Bob
-  - decrypt and verify message
+  - sign and encrypt the message from Alice to Bob
+  - decrypt and verify the encrypted message
 
 ### Commands:
 
 #### list keys
 
+```
 $ ls ../keys
 alice-public-key.asc  alice-secret-key.asc  bob-public-key.asc  bob-secret-key.asc
 $
+```
 
 #### compile
 
+> mvn compile
+
+```
 $ mvn compile -q
 $
+```
 
-#### sign and encrypt message from Alice to Bob
+#### sign and encrypt the message from Alice to Bob
 
+> mvn exec:java -Dexec.mainClass="com.example.EncryptAndSign" -q
+
+```
 $ cat ../message-alice-to-bob.txt
 Message from Alice to Bob...
 $
@@ -52,9 +64,13 @@ $
 $ ls ../message-alice-to-bob.txt.gpg
 ../message-alice-to-bob.txt.gpg
 $
+```
 
-#### decrypt and verify message
+#### decrypt and verify the encrypted message
 
+> mvn exec:java -Dexec.mainClass="com.example.DecryptAndVerify" -q
+
+```
 $ mvn exec:java -Dexec.mainClass="com.example.DecryptAndVerify" -q
 16:59:36.622 [com.example.DecryptAndVerify.main()] INFO org.c02e.jpgpj.Decryptor - not using decryption key pub e  FB322F6B
 16:59:36.627 [com.example.DecryptAndVerify.main()] INFO org.c02e.jpgpj.Decryptor - using decryption key sec+ed F8DF4D46
@@ -66,4 +82,4 @@ $
 $ cat ../message-alice-to-bob-decrypted.txt
 Message from Alice to Bob...
 $
-
+```

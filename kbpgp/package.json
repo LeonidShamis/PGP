@@ -5,6 +5,6 @@
   "author": "Leonid Shamis",
   "license": "MIT",
   "dependencies": {
-    "kbpgp": "^2.0.82"
+    "kbpgp": "^2.1.15"
   }
 }
